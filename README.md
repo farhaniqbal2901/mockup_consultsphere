@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# ConsultSphere Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En helhetlig mockup av ConsultSphere-plattformen som viser hvordan vi matcher bedrifter og konsulenter. Løsningen er bygget i React (TypeScript) med en mørk, moderne profil og flere landingssider for ulike målgrupper.
 
-## Available Scripts
+## Høydepunkter
 
-In the project directory, you can run:
+- Felles navigasjon/footere via et delt `Layout`-skall og oppdatert global styling (`src/components/Layout.tsx`, `src/App.css`).
+- Rik forside med hero, kundelogobånd, karusell for konsulenter, fordelseksjon, prosess og kundereferanser (`src/pages/Home`).
+- Dedikerte undersider for «Om oss», Tjenester, Konsulenter, For konsulenter og Kontakt – alle redesignet med det nye `pages.css`-rammeverket.
+- Ny kontaktside med validering og informasjonsseksjoner, samt justert datastruktur for ikoner uten eksterne UI-bibliotek.
 
-### `npm start`
+## Teknologistack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React 19 + TypeScript
+- React Router 7 for ruting
+- Framer Motion og Embla Carousel for interaksjon/animasjoner
+- `gh-pages` for enkel distribusjon til GitHub Pages
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Kom i gang
 
-### `npm test`
+```bash
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Applikasjonen kjører på `http://localhost:3000/mockup_consultsphere` (basert på `basename`/`homepage`).
 
-### `npm run build`
+## Bygg og test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build   # Produksjonsbygg i build/
+npm test        # (valgfritt) kjør Jest-testene
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploy til GitHub Pages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Bygg: `npm run build`
+2. Distribuer: `npm run deploy`
+3. Push endringene: `git add . && git commit -m "Deploy" && git push`
 
-### `npm run eject`
+`npm run deploy` bruker `gh-pages` og deployer innholdet i `build/` til `gh-pages`-branchen. Pass på at `homepage`-feltet i `package.json` peker på korrekt GitHub Pages-url.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Prosjektstruktur (utdrag)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+  App.tsx            # Ruter + layout
+  components/
+    Layout.tsx       # Felles topp/bunn
+  pages/
+    Home/            # Startside med del-seksjoner
+    pages.css        # Delt stilark for undersider
+    About.tsx        # Om oss-side
+    Services.tsx     # Tjenester
+    Consultants.tsx  # Konsulentprofiler
+    ForConsultants.tsx
+    Contact.tsx
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Videre arbeid
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Koble kontakt-skjemaet mot reell backend
+- Hente inn faktisk data fra API i stedet for mock-data
+- Utvide testdekningen for kritiske komponenter

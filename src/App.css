@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+:root {
+  --cs-blue: #003d96;
+  --cs-orange: #ff914d;
+  --cs-bg: #0b1020;
+  --cs-card: #12182a;
+  --cs-text: #eaf0ff;
+  --cs-muted: #9fb2d9;
+  --cs-line: #1d2740;
+
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  --max-width: 1180px;
+
+  --primary-color: var(--cs-blue);
+  --secondary-color: var(--cs-orange);
+  --light-gray-color: #1d2740;
+  --dark-color: #080d1a;
+  --white-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--cs-bg);
+  color: var(--cs-text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
-.App-header {
-  background-color: #282c34;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--cs-text);
+}
+
+.container {
+  max-width: var(--max-width);
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.app-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: radial-gradient(circle at top, rgba(0, 61, 150, 0.25), transparent 55%) var(--cs-bg);
 }
 
-.App-link {
-  color: #61dafb;
+.site-main {
+  flex: 1;
+  padding-top: 96px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.site-main--home {
+  padding-top: 0;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section-title {
+  font-size: 42px;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  color: var(--cs-muted);
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .section {
+    padding: 64px 0;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+  .section-subtitle {
+    font-size: 16px;
   }
 }
