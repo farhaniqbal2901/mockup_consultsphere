@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mockup_consultsphere/static/css/main.d681e531.css",
-    "main.js": "/mockup_consultsphere/static/js/main.4bd7c5c9.js",
+    "main.css": "/mockup_consultsphere/static/css/main.8c2bc959.css",
+    "main.js": "/mockup_consultsphere/static/js/main.8d5401c2.js",
     "static/js/453.83f018ce.chunk.js": "/mockup_consultsphere/static/js/453.83f018ce.chunk.js",
     "static/media/bygg.jpg": "/mockup_consultsphere/static/media/bygg.d7b9c97e4e13b521ac9c.jpg",
     "static/media/2.png": "/mockup_consultsphere/static/media/2.f7915a0cf099fefafab8.png",
     "index.html": "/mockup_consultsphere/index.html",
-    "main.d681e531.css.map": "/mockup_consultsphere/static/css/main.d681e531.css.map",
-    "main.4bd7c5c9.js.map": "/mockup_consultsphere/static/js/main.4bd7c5c9.js.map",
+    "main.8c2bc959.css.map": "/mockup_consultsphere/static/css/main.8c2bc959.css.map",
+    "main.8d5401c2.js.map": "/mockup_consultsphere/static/js/main.8d5401c2.js.map",
     "453.83f018ce.chunk.js.map": "/mockup_consultsphere/static/js/453.83f018ce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d681e531.css",
-    "static/js/main.4bd7c5c9.js"
+    "static/css/main.8c2bc959.css",
+    "static/js/main.8d5401c2.js"
   ]
 }
