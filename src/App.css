@@ -1,97 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
   --cs-blue: #003d96;
+  --cs-blue-light: #1a4cb4;
   --cs-orange: #ff914d;
-  --cs-bg: #0b1020;
-  --cs-card: #12182a;
+  --cs-deep: #0b1020;
+  --cs-deep-alt: #10172b;
+  --cs-card: rgba(18, 24, 42, 0.85);
+  --cs-card-border: rgba(159, 178, 217, 0.14);
   --cs-text: #eaf0ff;
   --cs-muted: #9fb2d9;
-  --cs-line: #1d2740;
-
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-
-  --max-width: 1180px;
-
-  --primary-color: var(--cs-blue);
-  --secondary-color: var(--cs-orange);
-  --light-gray-color: #1d2740;
-  --dark-color: #080d1a;
-  --white-color: #ffffff;
+  --cs-line: rgba(159, 178, 217, 0.2);
+  --cs-glass: rgba(16, 23, 43, 0.55);
+  --cs-radius: 28px;
+  --cs-radius-sm: 18px;
+  --cs-shadow-soft: 0 18px 48px rgba(4, 10, 28, 0.45);
+  --cs-shadow-card: 0 25px 60px rgba(8, 12, 30, 0.55);
+  --cs-max-width: 1160px;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   min-height: 100%;
+  background: var(--cs-deep);
 }
 
 body {
-  background-color: var(--cs-bg);
+  margin: 0;
   color: var(--cs-text);
   font-family: 'Inter', sans-serif;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background: radial-gradient(circle at top, rgba(0, 61, 150, 0.22), transparent 55%) var(--cs-deep);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
   color: var(--cs-text);
 }
 
-.container {
-  max-width: var(--max-width);
-  padding-left: 28px;
-  padding-right: 28px;
+button,
+input,
+textarea {
+  font-family: inherit;
 }
 
-.app-shell {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: radial-gradient(circle at top, rgba(0, 61, 150, 0.25), transparent 55%) var(--cs-bg);
+.cs-app {
+  position: relative;
+  overflow-x: hidden;
 }
 
-.site-main {
-  flex: 1;
-  padding-top: 96px;
-}
-
-.site-main--home {
-  padding-top: 0;
-}
-
-.section {
-  padding: 96px 0;
-}
-
-.section-title {
-  font-size: 42px;
-  margin-bottom: 1.5rem;
-}
-
-.section-subtitle {
-  color: var(--cs-muted);
-  font-size: 18px;
-  margin-bottom: 2rem;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 3.5rem;
+.cs-container {
+  width: min(100% - 48px, var(--cs-max-width));
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .section {
-    padding: 64px 0;
-  }
-  .section-title {
-    font-size: 32px;
-  }
-  .section-subtitle {
-    font-size: 16px;
+  .cs-container {
+    width: min(100% - 32px, var(--cs-max-width));
   }
 }

@@ -1,20 +1,20 @@
-# ConsultSphere Platform
+# ConsultSphere Landing
 
-En helhetlig mockup av ConsultSphere-plattformen som viser hvordan vi matcher bedrifter og konsulenter. Løsningen er bygget i React (TypeScript) med en mørk, moderne profil og flere landingssider for ulike målgrupper.
+Ferdig designet landing page for ConsultSphere – en plattform som matcher virksomheter med verifiserte konsulenter innen økonomi, juss, markedsføring, eiendom og teknologi. Prosjektet er bygget med React + TypeScript og leverer en helhetlig, animert forside klar for publisering på GitHub Pages.
 
 ## Høydepunkter
 
-- Felles navigasjon/footere via et delt `Layout`-skall og oppdatert global styling (`src/components/Layout.tsx`, `src/App.css`).
-- Rik forside med hero, kundelogobånd, karusell for konsulenter, fordelseksjon, prosess og kundereferanser (`src/pages/Home`).
-- Dedikerte undersider for «Om oss», Tjenester, Konsulenter, For konsulenter og Kontakt – alle redesignet med det nye `pages.css`-rammeverket.
-- Ny kontaktside med validering og informasjonsseksjoner, samt justert datastruktur for ikoner uten eksterne UI-bibliotek.
+- Glassmorphism-navbar med sticky scroll-effekt og responsivt menysystem (`src/landing/Navbar.tsx`).
+- Hero med parallaxbakgrunn, partikkelanimasjon, CTA-knapper og dynamiske KPI-chips (`src/landing/Hero.tsx`, `src/landing/Particles.tsx`).
+- Tillitsseksjon, konsulentkarusell (Embla + Framer Motion), fordels- og prosessblokker, testimonial og kontaktskjema – alt i én side (`src/landing`).
+- Moderne dark-mode design med variabler og helhetlig typografi i `src/App.css` og `src/landing/landing.css`.
 
 ## Teknologistack
 
 - React 19 + TypeScript
-- React Router 7 for ruting
-- Framer Motion og Embla Carousel for interaksjon/animasjoner
-- `gh-pages` for enkel distribusjon til GitHub Pages
+- Framer Motion for mikroanimasjoner
+- Embla Carousel for glidegalleri
+- `gh-pages` for deploy til GitHub Pages
 
 ## Kom i gang
 
@@ -23,42 +23,41 @@ npm install
 npm start
 ```
 
-Applikasjonen kjører på `http://localhost:3000/mockup_consultsphere` (basert på `basename`/`homepage`).
+Appen kjører på `http://localhost:3000/mockup_consultsphere` (basert på `homepage`).
 
-## Bygg og test
+## Bygg og deploy
 
 ```bash
-npm run build   # Produksjonsbygg i build/
-npm test        # (valgfritt) kjør Jest-testene
+npm run build    # Produksjonsbygg i build/
+npm run deploy   # Publiser til GitHub Pages
 ```
 
-## Deploy til GitHub Pages
-
-1. Bygg: `npm run build`
-2. Distribuer: `npm run deploy`
-3. Push endringene: `git add . && git commit -m "Deploy" && git push`
-
-`npm run deploy` bruker `gh-pages` og deployer innholdet i `build/` til `gh-pages`-branchen. Pass på at `homepage`-feltet i `package.json` peker på korrekt GitHub Pages-url.
+`npm run deploy` bygger prosjektet og pusher `build/` til `gh-pages`-branchen. Sørg for at `homepage` i `package.json` peker på riktig GitHub Pages-url.
 
 ## Prosjektstruktur (utdrag)
 
 ```
 src/
-  App.tsx            # Ruter + layout
+  App.tsx              # Single-page entry, rendrer landing
+  App.css              # Globale variabler og layout
   components/
-    Layout.tsx       # Felles topp/bunn
-  pages/
-    Home/            # Startside med del-seksjoner
-    pages.css        # Delt stilark for undersider
-    About.tsx        # Om oss-side
-    Services.tsx     # Tjenester
-    Consultants.tsx  # Konsulentprofiler
-    ForConsultants.tsx
-    Contact.tsx
+    StarRating.tsx     # Gjenbrukbar stjernekomponent
+  landing/
+    LandingPage.tsx    # Komposisjon av seksjoner
+    Navbar.tsx         # Navigasjon + mobilskuff
+    Hero.tsx           # Hero + CTA + partikler
+    TrustLogos.tsx     # Logo-bånd
+    ConsultantCarousel.tsx
+    Benefits.tsx
+    Process.tsx
+    Testimonial.tsx
+    ContactSection.tsx
+    Footer.tsx
+    landing.css        # Stiler for hele landing
 ```
 
 ## Videre arbeid
 
-- Koble kontakt-skjemaet mot reell backend
-- Hente inn faktisk data fra API i stedet for mock-data
-- Utvide testdekningen for kritiske komponenter
+- Koble kontaktskjema til backend/løsning for innsending
+- Integrere reelle konsulentdata i stedet for statiske dummy-profiler
+- Utvide med flere undersider (Om oss, Tjenester, osv.) dersom behov

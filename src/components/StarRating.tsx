@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 interface StarRatingProps {
@@ -6,21 +6,21 @@ interface StarRatingProps {
 }
 
 const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
-  const Star = FaStar as any;
-  const StarHalf = FaStarHalfAlt as any;
-  const StarEmpty = FaRegStar as any;
+  const FullStar = FaStar as ComponentType<{ size?: number }>;
+  const HalfStar = FaStarHalfAlt as ComponentType<{ size?: number }>;
+  const EmptyStar = FaRegStar as ComponentType<{ size?: number }>;
 
   return (
-    <div>
-      {[...Array(5)].map((_, index) => {
+    <div className="cs-stars" aria-label={`Vurdering ${rating.toFixed(1)} av 5`}>
+      {Array.from({ length: 5 }).map((_, index) => {
         const starNumber = index + 1;
-        if (starNumber <= rating) {
-          return <Star key={index} color="#ffc107" />;
-        } else if (starNumber === Math.ceil(rating) && !Number.isInteger(rating)) {
-          return <StarHalf key={index} color="#ffc107" />;
-        } else {
-          return <StarEmpty key={index} color="#ffc107" />;
+        if (rating >= starNumber) {
+          return <FullStar key={index} />;
         }
+        if (rating >= starNumber - 0.5) {
+          return <HalfStar key={index} />;
+        }
+        return <EmptyStar key={index} />;
       })}
     </div>
   );
